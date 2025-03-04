@@ -1,66 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🎯 Descrição do Projeto:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é uma base de Laravel que adota os princípios do SOLID, com o objetivo de oferecer um código altamente desacoplado, escalável e de fácil manutenção. A estrutura foi projetada para ser uma fundação sólida para qualquer aplicação web, garantindo eficiência e facilidade de expansão no futuro.
 
-## About Laravel
+A arquitetura do projeto é composta por vários componentes chave que trabalham em conjunto para garantir flexibilidade, clareza e boas práticas de desenvolvimento. Vamos explorar a estrutura:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🔄 Arquitetura Base
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. DTO (Data Transfer Object):
+   📦 Objetos que carregam dados entre os processos, sem lógica de negócio.
+   Os DTOs são utilizados para transferir dados entre as camadas de aplicação (como Controllers e Services), mantendo o código mais organizado e fácil de entender.
+2. Helpers:
+   🛠️ Funções auxiliares que oferecem soluções reutilizáveis e simplificam tarefas comuns.
+   Esses helpers oferecem funcionalidades reutilizáveis para operações como validação de dados, manipulação de strings e outras tarefas do dia-a-dia.
+3. Controllers:
+   🎮 Controladores que gerenciam as requisições e interagem com os serviços para retornar as respostas apropriadas.
+   Os Controllers são responsáveis por receber e processar as requisições HTTP, delegando a lógica de negócio para os Services e retornando as respostas adequadas ao cliente.
+4. Requests:
+   📩 Validações de entrada para garantir que os dados recebidos nas requisições estão corretos.
+   Esses Requests cuidam da validação e formatação dos dados que chegam para o sistema, antes de serem processados pelos Controllers.
+5. Middlewares:
+   🛡️ Camadas de proteção que podem interceptar as requisições, realizando verificações e alterações antes de elas chegarem ao Controller.
+   Os Middlewares podem ser usados para autenticação, verificação de permissões e outras verificações necessárias antes que o pedido chegue ao Controller.
+6. Models:
+   📊 Representações das tabelas do banco de dados que interagem diretamente com os dados persistentes.
+   Os Models são a ponte entre o banco de dados e a lógica de negócio, permitindo interagir com as tabelas de forma fluida.
+7. Queries Manuais SQL:
+   🔍 Consultas SQL personalizadas para operações complexas ou específicas que não podem ser facilmente feitas com Eloquent.
+   Queries manuais são usadas para otimizar operações de leitura e escrita, especialmente em cenários mais complexos onde o Eloquent não é suficiente.
+8. Repository Pattern:
+   🏢 Padrão de design que facilita a abstração e o desacoplamento entre a lógica de acesso ao banco de dados e o resto da aplicação.
+   O Repository fornece uma interface limpa para acessar os dados, promovendo a reutilização de código e permitindo fácil manutenção.
+9. Services:
+   🧑‍💻 Camada responsável pela lógica de negócios da aplicação.
+   Os Services contêm a lógica de negócio que manipula dados e realiza operações antes de devolver a resposta ao Controller. Eles ajudam a manter os Controllers leves e focados apenas na manipulação de requisições.
+10. Value Objects:
+    🔑 Objetos imutáveis que representam conceitos ou entidades dentro do domínio do problema.
+    Os Value Objects são usados para representar elementos de domínio com valor fixo, como moeda, email ou endereço, garantindo a consistência dos dados.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+🛠️ Testes e Qualidade
+🧪 Testes Unitários:
+Os testes unitários são escritos para garantir que cada função do sistema esteja funcionando corretamente. Eles validam as operações de inserção de dados no banco de dados, aumentando a confiança no sistema.
 
-## Learning Laravel
+📜 Documentação Swagger:
+A documentação Swagger foi implementada para fornecer uma visão clara das rotas da API e facilitar o consumo da API por outras equipes. A documentação está disponível em: http://localhost:8000/api/documentation.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+🌍 Visão Geral do Fluxo de Trabalho
+Requisição HTTP chega ao Controller.
+O Controller valida os dados com o Request e delega a lógica de negócios para o Service.
+O Service processa os dados, utilizando os Repositories e Value Objects, e interage com o Model.
+Se necessário, o Middleware pode verificar se a requisição é válida (exemplo: token de autenticação).
+Após o processamento, o Controller retorna a resposta para o cliente.
+Este projeto é mais do que uma simples aplicação Laravel – ele fornece uma base sólida para criar aplicações escaláveis e bem estruturadas. Com os componentes desacoplados, fácil manutenção e uso de padrões modernos de desenvolvimento, você tem à sua disposição todas as ferramentas para construir sistemas de alta qualidade.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+📚 Documentação Completa
+Toda a documentação da API está disponível para fácil consulta, tornando a integração e o entendimento do sistema mais ágil. Você pode acessá-la em:
+http://localhost:8000/api/documentation.
