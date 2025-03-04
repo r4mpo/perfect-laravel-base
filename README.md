@@ -55,3 +55,5 @@ Este projeto é mais do que uma simples aplicação Laravel – ele fornece uma 
 📚 Documentação Completa
 Toda a documentação da API está disponível para fácil consulta, tornando a integração e o entendimento do sistema mais ágil. Você pode acessá-la em:
 http://localhost:8000/api/documentation.
+
+![1741121052546](image/README/1741121052546.png)
