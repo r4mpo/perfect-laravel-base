@@ -29,33 +29,6 @@ class LoginService extends DefaultService
         }
     }
 
-    public function detalhes(): ResponseDTO
-    {
-        try {
-            $resposta_db = auth()->user();
-            $resposta = $this->montar_resposta($resposta_db, $resposta_db, $this->mensagem_nao_encontrada);
-            $this->definir_dados_resposta($resposta);
-        } catch (\Exception $e) {
-            $this->lidar_com_excecao($e);
-        } finally {
-            return $this->dados_resposta([]);
-        }
-    }
-
-    public function logout(): ResponseDTO
-    {
-        try {
-            auth()->logout();
-            $resposta_db = true;
-            $resposta = $this->montar_resposta($resposta_db, 'Usuário desconectado com sucesso.', $this->mensagem_nao_encontrada);
-            $this->definir_dados_resposta($resposta);
-        } catch (\Exception $e) {
-            $this->lidar_com_excecao($e);
-        } finally {
-            return $this->dados_resposta([]);
-        }
-    }
-
     private function valida_tokens_credenciais($credenciais): array|bool
     {
         if (!$token = auth()->attempt($credenciais)) {

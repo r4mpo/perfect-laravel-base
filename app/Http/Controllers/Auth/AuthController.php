@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\Auth\DetalhesService;
+use App\Services\Auth\LogoutService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\DTO\Default\ResponseDTO;
@@ -13,13 +15,18 @@ class AuthController extends Controller
 {
     private RegistrarService $registrar_service;
     private LoginService $login_service;
+    private DetalhesService $detalhes_service;
+    private LogoutService $logout_service;
+
     private ResponseDTO $resposta_dto;
-    
-    public function __construct(RegistrarService $registrar_service, LoginService $login_service)
+
+    public function __construct(RegistrarService $registrar_service, LoginService $login_service, DetalhesService $detalhes_service, LogoutService $logout_service)
     {
         parent::__construct();
         $this->resposta_dto = new ResponseDTO();
         $this->login_service = $login_service;
+        $this->logout_service = $logout_service;
+        $this->detalhes_service = $detalhes_service;
         $this->registrar_service = $registrar_service;
     }
 
@@ -37,13 +44,13 @@ class AuthController extends Controller
 
     public function detalhes(): JsonResponse
     {
-        $this->resposta_dto = $this->login_service->detalhes();
+        $this->resposta_dto = $this->detalhes_service->detalhes();
         return $this->resposta(resposta_dto: $this->resposta_dto);
     }
 
     public function logout(): JsonResponse
     {
-        $this->resposta_dto = $this->login_service->logout();
+        $this->resposta_dto = $this->logout_service->logout();
         return $this->resposta(resposta_dto: $this->resposta_dto);
     }
 }
