@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Swagger\Auth;
+namespace App\Swagger\Usuario;
 
 /**
  * @OA\Post(

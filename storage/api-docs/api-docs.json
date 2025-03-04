@@ -10,13 +10,105 @@
         }
     ],
     "paths": {
+        "default": {
+            "options": {
+                "tags": [
+                    "Retorno Padrão"
+                ],
+                "summary": "Retornos padronizados",
+                "description": "Retornos padronizados independente do endpoint.",
+                "operationId": "deaultResponse",
+                "responses": {
+                    "401": {
+                        "description": "401 - Token Inválido",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "response": {
+                                            "type": "string",
+                                            "example": "Token invalido."
+                                        },
+                                        "responseCod": {
+                                            "type": "integer",
+                                            "example": 333
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "404 - Rota Não Encontrada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "response": {
+                                            "type": "string",
+                                            "example": "Rota não encontrada."
+                                        },
+                                        "responseCod": {
+                                            "type": "integer",
+                                            "example": 333
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "405 - Método Não Permitido",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "response": {
+                                            "type": "string",
+                                            "example": "Método não permitido para esta rota."
+                                        },
+                                        "responseCod": {
+                                            "type": "integer",
+                                            "example": 333
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "500 - Erro Interno do Servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "response": {
+                                            "type": "string",
+                                            "example": "Erro desconhecido."
+                                        },
+                                        "responseCod": {
+                                            "type": "integer",
+                                            "example": 333
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/usuario/detalhes": {
             "get": {
                 "tags": [
                     "Autenticação"
                 ],
                 "summary": "Obter detalhes do usuário autenticado",
-                "operationId": "ba96c86bc2d185c98a77ee409881e251",
+                "operationId": "e1cd8f06d03ecbfe99b9ad1af3de3575",
                 "responses": {
                     "111": {
                         "description": "Detalhes do usuário",
@@ -100,7 +192,7 @@
                     "Autenticação"
                 ],
                 "summary": "Autenticar usuário e obter token",
-                "operationId": "d351ad8547aa59ae5b9020ab1255fb36",
+                "operationId": "f72a87b87131c266c5a4b553d854c81c",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -194,7 +286,7 @@
                     "Autenticação"
                 ],
                 "summary": "Fazer logout do usuário",
-                "operationId": "74d5698a1810ce8f0761751058bcbb91",
+                "operationId": "555860832930d3abba8495eb1d0de329",
                 "responses": {
                     "111": {
                         "description": "Logout bem-sucedido",
@@ -230,7 +322,7 @@
                     "Autenticação"
                 ],
                 "summary": "Registrar um novo usuário",
-                "operationId": "859c8138664a9bfea0672ecac1991d96",
+                "operationId": "0ffaa0cff400e6b9f3f6d7580b5206d8",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -342,101 +434,20 @@
                     }
                 }
             }
-        },
-        "default": {
-            "options": {
-                "tags": [
-                    "Retorno Padrão"
-                ],
-                "summary": "Retornos padronizados",
-                "description": "Retornos padronizados independente do endpoint.",
-                "operationId": "deaultResponse",
-                "responses": {
-                    "401": {
-                        "description": "401 - Token Inválido",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "response": {
-                                            "type": "string",
-                                            "example": "Token invalido."
-                                        },
-                                        "responseCod": {
-                                            "type": "integer",
-                                            "example": 333
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "404 - Rota Não Encontrada",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "response": {
-                                            "type": "string",
-                                            "example": "Rota não encontrada."
-                                        },
-                                        "responseCod": {
-                                            "type": "integer",
-                                            "example": 333
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "405": {
-                        "description": "405 - Método Não Permitido",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "response": {
-                                            "type": "string",
-                                            "example": "Método não permitido para esta rota."
-                                        },
-                                        "responseCod": {
-                                            "type": "integer",
-                                            "example": 333
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "500 - Erro Interno do Servidor",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "response": {
-                                            "type": "string",
-                                            "example": "Erro desconhecido."
-                                        },
-                                        "responseCod": {
-                                            "type": "integer",
-                                            "example": 333
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     },
     "components": {
+        "parameters": {
+            "Accept": {
+                "name": "Accept",
+                "in": "header",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "application/json"
+                }
+            }
+        },
         "securitySchemes": {
             "bearerAuth": {
                 "type": "http",
@@ -447,12 +458,12 @@
     },
     "tags": [
         {
-            "name": "Autenticação",
-            "description": "Autenticação"
-        },
-        {
             "name": "Retorno Padrão",
             "description": "Retorno Padrão"
+        },
+        {
+            "name": "Autenticação",
+            "description": "Autenticação"
         }
     ]
 }
