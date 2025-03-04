@@ -11,10 +11,10 @@ use App\Services\Auth\LoginService;
 
 class AuthController extends Controller
 {
-    private $registrar_service;
-    private $login_service;
-    private $resposta_dto;
-
+    private RegistrarService $registrar_service;
+    private LoginService $login_service;
+    private ResponseDTO $resposta_dto;
+    
     public function __construct(RegistrarService $registrar_service, LoginService $login_service)
     {
         parent::__construct();
