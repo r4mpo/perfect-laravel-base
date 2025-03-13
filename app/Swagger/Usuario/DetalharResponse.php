@@ -4,13 +4,13 @@ namespace App\Swagger\Usuario;
 
 /**
  * @OA\Get(
- *     path="/usuario/detalhes",
- *     summary="Obter detalhes do usuário autenticado",
+ *     path="/usuario/detalhar",
+ *     summary="Obter detalhar do usuário autenticado",
  *     tags={"Autenticação"},
  *     security={{"bearerAuth": {}}},
  *     @OA\Response(
  *         response=111,
- *         description="Detalhes do usuário",
+ *         description="detalhar do usuário",
  *         @OA\JsonContent(
  *             @OA\Property(property="resposta", type="object",
  *                 @OA\Property(property="id", type="integer", example=1),
@@ -34,6 +34,6 @@ namespace App\Swagger\Usuario;
  * )
  */
 
-class DetalhesResponse
+class DetalharResponse
 {
 }

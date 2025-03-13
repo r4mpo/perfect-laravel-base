@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Services\DefaultService;
 use App\DTO\Default\ResponseDTO;
-use App\Repository\UsersRepository;
+use App\Repositories\UsersRepository;
 use App\ValueObjects\Auth\RegistrarAuthVO;
 use Tymon\JWTAuth\Facades\JWTAuth;
 

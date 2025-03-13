@@ -5,7 +5,7 @@ namespace App\Services\Auth;
 use App\DTO\Default\ResponseDTO;
 use App\Services\DefaultService;
 
-class DetalhesService extends DefaultService
+class DetalharService extends DefaultService
 {
     protected string $mensagem_nao_encontrada = 'Credenciais e/ou sessões inválidas. Tente novamente.';
 
@@ -14,7 +14,7 @@ class DetalhesService extends DefaultService
         parent::__construct();
     }
     
-    public function detalhes(): ResponseDTO
+    public function detalhar(): ResponseDTO
     {
         try {
             $resposta_db = auth()->user();

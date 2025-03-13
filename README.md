@@ -14,14 +14,15 @@ O projeto é estruturado de forma a seguir padrões de arquitetura que permitem 
 
 * **DTO (Data Transfer Objects):** Utilizado para garantir a transferência de dados de forma organizada e consistente.
 * **Helpers:** Funções reutilizáveis que auxiliam no desempenho e organização do código.
-* **Controllers:** Responsáveis por orquestrar as requisições e interagir com os **Services** e  **Repositories** .
+* **Controllers:** Responsáveis por orquestrar as requisições e interagir com os **Services** e  **Repositories**.
 * **Requests:** Validação e sanitização dos dados de entrada da API, garantindo segurança e integridade.
 * **Middlewares:** Responsáveis por aplicar regras de acesso, autenticação e autorização, entre outros filtros de segurança.
 * **Models:** Representação das entidades no banco de dados, com métodos que ajudam na manipulação desses dados.
 * **Queries Manuais SQL:** Permite a execução de consultas SQL personalizadas e otimizadas.
-* **Repository:** Implementação do padrão de repositório, facilitando o acesso a dados, centralizando a lógica de consulta e permitindo fácil manutenção.
-* **Service:** Contém a lógica de negócios, desacoplando a implementação das  **Controllers** .
+* **Repositories:** Implementação do padrão de repositório, facilitando o acesso a dados, centralizando a lógica de consulta e permitindo fácil manutenção.
+* **Services:** Contém a lógica de negócios, desacoplando a implementação das  **Controllers**.
 * **Value Objects:** Representação de objetos imutáveis, como tipos de dados ricos que devem ser usados de forma controlada e segura.
+* **Interfaces:** Conjunto de padrões envolvendo parâmetros e retornos esperados em funções específicas.
 
 ### **📖 Documentação**
 

@@ -1,7 +1,7 @@
 <?php
-namespace App\Query\Users;
+namespace App\Queries\Users;
 
-use App\Query\DefaultQuery;
+use App\Queries\DefaultQuery;
 
 class RegistrarQuery extends DefaultQuery
 {

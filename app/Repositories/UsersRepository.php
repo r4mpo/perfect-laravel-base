@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repositories;
 
 use App\Models\User;
-use App\Query\Users\RegistrarQuery;
+use App\Queries\Users\RegistrarQuery;
 use Illuminate\Support\Facades\DB;
 
 class UsersRepository
