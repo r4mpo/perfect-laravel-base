@@ -18,7 +18,7 @@ O projeto é estruturado de forma a seguir padrões de arquitetura que permitem 
 * **Requests:** Validação e sanitização dos dados de entrada da API, garantindo segurança e integridade.
 * **Middlewares:** Responsáveis por aplicar regras de acesso, autenticação e autorização, entre outros filtros de segurança.
 * **Models:** Representação das entidades no banco de dados, com métodos que ajudam na manipulação desses dados.
-* **Queries Manuais SQL:** Permite a execução de consultas SQL personalizadas e otimizadas.
+* **Queries:** Permite a execução de consultas SQL personalizadas e otimizadas.
 * **Repositories:** Implementação do padrão de repositório, facilitando o acesso a dados, centralizando a lógica de consulta e permitindo fácil manutenção.
 * **Services:** Contém a lógica de negócios, desacoplando a implementação das  **Controllers**.
 * **Value Objects:** Representação de objetos imutáveis, como tipos de dados ricos que devem ser usados de forma controlada e segura.
