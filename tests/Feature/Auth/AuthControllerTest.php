@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\DTO\Default\ResponseDTO;
+use App\DTOs\Default\ResponseDTO;
 use App\Services\Auth\RegistrarService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Response;

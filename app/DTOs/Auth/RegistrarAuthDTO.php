@@ -1,14 +1,15 @@
 <?php
 
-namespace App\DTO\Auth;
+namespace App\DTOs\Auth;
 
-use App\DTO\Default\RequestDTO;
+use App\DTOs\Default\RequestDTO;
 
-class LoginAuthDTO extends RequestDTO
+class RegistrarAuthDTO extends RequestDTO
 {
     public function __construct($dados)
     {
         $chaves_esperadas = [
+            'name',
             'email',
             'password'
         ];

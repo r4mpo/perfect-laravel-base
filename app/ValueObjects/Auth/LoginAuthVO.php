@@ -2,7 +2,7 @@
 
 namespace App\ValueObjects\Auth;
 
-use App\DTO\Auth\LoginAuthDTO;
+use App\DTOs\Auth\LoginAuthDTO;
 use App\Helpers\MensagensValidacao;
 use App\Http\Requests\Auth\LoginAuthRequest;
 use Illuminate\Support\Facades\Validator;

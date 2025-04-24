@@ -1,14 +1,17 @@
 <?php
 
-namespace App\DTO\Auth;
+namespace App\DTOs\Auth;
 
-use App\DTO\Default\RequestDTO;
+use App\DTOs\Default\RequestDTO;
 
-class RecarregarAuthDTO extends RequestDTO
+class LoginAuthDTO extends RequestDTO
 {
     public function __construct($dados)
     {
-        $chaves_esperadas = [];
+        $chaves_esperadas = [
+            'email',
+            'password'
+        ];
 
         $chaves_nao_esperadas = array_diff(array_keys($dados), $chaves_esperadas);
 

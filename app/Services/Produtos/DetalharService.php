@@ -2,7 +2,7 @@
 
 namespace App\Services\Produtos;
 
-use App\DTO\Default\ResponseDTO;
+use App\DTOs\Default\ResponseDTO;
 use App\Services\DefaultService;
 
 class DetalharService extends DefaultService

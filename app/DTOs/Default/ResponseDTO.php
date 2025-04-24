@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DTO\Default;
+namespace App\DTOs\Default;
 
 class ResponseDTO
 {

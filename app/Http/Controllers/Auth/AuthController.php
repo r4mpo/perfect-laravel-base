@@ -7,7 +7,7 @@ use App\Services\Auth\DetalharService;
 use App\Services\Auth\LogoutService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\DTO\Default\ResponseDTO;
+use App\DTOs\Default\ResponseDTO;
 use App\Services\Auth\RegistrarService;
 use App\Services\Auth\LoginService;
 

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTO\Default\ResponseDTO;
+use App\DTOs\Default\ResponseDTO;
 use App\Helpers\LoggingHelper;
 use App\Helpers\ValidadorCodigoStatusHttp;
 

@@ -2,7 +2,7 @@
 
 namespace App\Services\Auth;
 
-use App\DTO\Default\ResponseDTO;
+use App\DTOs\Default\ResponseDTO;
 use App\Services\DefaultService;
 use App\ValueObjects\Auth\LoginAuthVO;
 

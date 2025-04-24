@@ -2,7 +2,7 @@
 
 namespace App\ValueObjects\Auth;
 
-use App\DTO\Auth\RecarregarAuthDTO;
+use App\DTOs\Auth\RecarregarAuthDTO;
 use App\Helpers\MensagensValidacao;
 use App\Http\Requests\Auth\RecarregarAuthRequest;
 use Illuminate\Support\Facades\Validator;
